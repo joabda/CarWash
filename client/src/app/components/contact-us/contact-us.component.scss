@@ -1,0 +1,41 @@
+a {
+    color: rgb(239, 218, 206);
+    text-decoration: none;
+}
+
+#form {
+    display: flex;
+    justify-content: center;
+}
+
+figcaption {
+    padding-top: 10px;
+}
+
+#title {
+    color: white;
+}
+
+.contact-infos {
+    background: black;
+    color: rgb(239, 218, 206);
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.contact-infos figure {
+    margin: auto;
+    padding: 5px;
+    text-align: center;
+    text-transform: uppercase;
+    width: auto;
+}
+
+.contact-infos figure img {
+    border-radius: 50%;
+    max-width: 100%;
+    height: auto;
+    width: auto
+}

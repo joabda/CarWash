@@ -36,6 +36,14 @@
     flex: 1 1 auto;
   }
 
+  #lang-img {
+    width: 40px;
+  }
+
+  #lang-img:hover{
+    cursor: pointer;
+  }
+
   .btn-outline-dark {
     color: white;
     font-size: x-large;

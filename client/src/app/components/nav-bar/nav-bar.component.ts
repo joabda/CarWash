@@ -3,6 +3,8 @@ import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/l
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { MatDialog } from '@angular/material';
+import { DataService } from 'src/app/services/data/data.service';
+import { Language } from 'src/app/enums/language';
 
 
 
@@ -39,7 +41,7 @@ export class NavBarComponent implements OnInit {
       shareReplay()
     );
 
-  constructor(private breakpointObserver: BreakpointObserver, public dialog: MatDialog) { }
+  constructor(private breakpointObserver: BreakpointObserver, public dialog: MatDialog, private data: DataService) { }
 
   ngOnInit() {
     this.breakpointObserver
@@ -48,5 +50,18 @@ export class NavBarComponent implements OnInit {
         this.isBigScreen = size.matches;
       }
       );
+  }
+
+  switchLanguage(): void {
+    (document.getElementById("lang-img") as HTMLImageElement).src = `../../../assets/img/language/${this.data.language.value}.png`;
+    this.data.language.next((this.data.language.value === Language.FR) ? Language.EN : Language.FR);
+    this.updateText();
+  }
+
+  private updateText(): void {
+    const titles = this.data.getTitles();
+    for(let i = 0; i < this.links.length; ++i) {
+      this.links[i].name = titles[i];
+    }
   }
 }

@@ -1,21 +1,51 @@
 <div class="container">
     <div class="banner">
-        <h1 id="title">Always here to help!</h1>
+        <h1 id="title">{{text[0]}}</h1>
         <section class="contact-infos">
             <figure>
                 <a href="tel:{{info.phoneNumber}}"><img src="../../../assets/img/icons/phone.png" alt="phone icon"></a>
                 <figcaption><a href="tel:{{info.phoneNumber}}">{{info.phoneNumber}}<br><br></a></figcaption>
             </figure>
             <figure>
-                <a href="mailto:{{info.email}}"><img src="../../../assets/img/icons/email.png"
-                        alt="email icon"></a>
+                <a href="mailto:{{info.email}}"><img src="../../../assets/img/icons/email.png" alt="email icon"></a>
                 <figcaption><a href="mailto:{{info.email}}">{{info.email}}<br><br></a></figcaption>
             </figure>
         </section>
     </div>
     <div id="form">
-        <iframe
-            src="https://docs.google.com/forms/d/e/1FAIpQLSdIuiWNNTzEdfcvvuqRVe-kfT4SSv9trx-nSjwKqzKT7uIbhg/viewform?embedded=true"
-            width="640" height="1081" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        <!-- <iframe id="form-frame"
+            src="https://docs.google.com/forms/d/e/1FAIpQLSdWunQHmnM61P6O6zFwgUGdaD2P9w7sCeFOf2WF0DHcSrCoDw/viewform?embedded=true"
+            width="640" height="1081" frameborder="0" marginheight="0" marginwidth="0">Loading…
+        </iframe> -->
+        <form class="text-center border border-light p-5">
+            <p class="h4 mb-4">Contact us</p>
+            <!-- Name -->
+            <input type="text" id="defaultContactFormName" class="form-control mb-4" placeholder="Name">
+            <!-- Email -->
+            <input type="email" id="defaultContactFormEmail" class="form-control mb-4" placeholder="E-mail">
+            <!-- Subject -->
+            <label>Subject</label>
+            <select class="browser-default custom-select mb-4">
+                <option value="" disabled>Choose option</option>
+                <option value="1" selected>Feedback</option>
+                <option value="2">Report a bug</option>
+                <option value="3">Feature request</option>
+                <option value="4">Feature request</option>
+            </select>
+            <!-- Message -->
+            <div class="form-group">
+                <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3"
+                    placeholder="Message"></textarea>
+            </div>
+            <!-- Copy -->
+            <div class="row">
+                <div class="col-md-6 mx-auto d-flex justify-content-center">
+                    <mdb-checkbox [default]="true" class="mb-4">Send me a copy of this message</mdb-checkbox>
+                </div>
+            </div>
+            <!-- Send button -->
+            <button mdbBtn color="info" block="true" type="submit">Send</button>
+        </form>
+        <!-- Default form contact -->
     </div>
 </div>

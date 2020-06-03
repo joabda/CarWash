@@ -20,6 +20,11 @@
                 <li *ngFor="let link of links">
                     <a type="button" class="btn btn-outline-dark link" routerLink="{{link.href}}">{{link.name}}</a>
                 </li>
+                <li>
+                    <a (click)="this.switchLanguage()"> 
+                        <img id="lang-img" src="../../../assets/img/language/FR.png" alt="Language"/>
+                    </a>
+                </li>
             </nav>
         </mat-toolbar>
         <ng-content></ng-content>

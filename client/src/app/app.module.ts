@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +11,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { ServicesComponent } from './components/services/services.component';
 import { PricesComponent } from './components/prices/prices.component';
+import { FormsModule } from '@angular/forms';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 
 @NgModule({
@@ -27,6 +29,7 @@ import { PricesComponent } from './components/prices/prices.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    FormsModule,
     MatAutocompleteModule,
     MatButtonModule,
     MatCardModule,
@@ -38,8 +41,10 @@ import { PricesComponent } from './components/prices/prices.component';
     MatSidenavModule,
     MatToolbarModule,
     MatTreeModule,
+    MDBBootstrapModule.forRoot()
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [ NO_ERRORS_SCHEMA ]
 })
 export class AppModule { }

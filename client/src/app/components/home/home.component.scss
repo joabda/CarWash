@@ -1,5 +1,5 @@
 #home-image {
-    background-image: url("../../../assets/img/img2.jpg"); 
+    background-image: url("../../../assets/img/img1.jpg"); 
     background-position: center center;
     background-size: cover;
     clip-path: circle(100vmax at 55% 65%); 
@@ -21,7 +21,7 @@
 }
 
 .carousel-text {
-    color: white;
+    color: black;
     overflow: hidden;
     position: absolute;
     transform: translate3d(-50%,-10%,0);

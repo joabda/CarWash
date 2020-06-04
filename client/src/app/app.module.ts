@@ -23,7 +23,8 @@ import { ServicesComponent } from './components/services/services.component';
 import { PricesComponent } from './components/prices/prices.component';
 import { FormsModule } from '@angular/forms';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
-
+import { HttpClientModule } from '@angular/common/http';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -36,10 +37,11 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
     PricesComponent
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
+    BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
+    HttpClientModule,
     MatAutocompleteModule,
     MatButtonModule,
     MatCardModule,
@@ -49,6 +51,7 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
     MatInputModule,
     MatListModule,
     MatSidenavModule,
+    MatSnackBarModule,
     MatToolbarModule,
     MatTreeModule,
     MDBBootstrapModule.forRoot()

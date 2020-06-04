@@ -1,6 +1,5 @@
 <div class="container">
     <div class="banner">
-        <h1 id="title">{{text[0]}}</h1>
         <section class="contact-infos">
             <figure>
                 <a href="tel:{{info.phoneNumber}}"><img src="../../../assets/img/icons/phone.png" alt="phone icon"></a>
@@ -12,40 +11,42 @@
             </figure>
         </section>
     </div>
-    <div id="form">
-        <!-- <iframe id="form-frame"
-            src="https://docs.google.com/forms/d/e/1FAIpQLSdWunQHmnM61P6O6zFwgUGdaD2P9w7sCeFOf2WF0DHcSrCoDw/viewform?embedded=true"
-            width="640" height="1081" frameborder="0" marginheight="0" marginwidth="0">Loading…
-        </iframe> -->
-        <form class="text-center border border-light p-5">
-            <p class="h4 mb-4">Contact us</p>
+    <div id="content">
+        <div style="float: left; max-width: 20vw;" id="onediv">
+            <h1 style="color: #33b5e5;" id="caption">{{text.caption}}</h1>
+            <img id="form-img" src="../../../assets/img/letter.svg" alt="Letter Image">
+        </div>
+        <form id="form" class="text-center border border-light p-5"  (ngSubmit)="f.form.valid && send()" #f="ngForm" novalidate>
             <!-- Name -->
-            <input type="text" id="defaultContactFormName" class="form-control mb-4" placeholder="Name">
+            <input type="text" name="{{text.fields[0]}}" id="defaultContactFormName" class="form-control mb-4" placeholder="{{text.fields[0]}}" [(ngModel)]="currentValues.name">
+            <div class="error" *ngIf="f.submitted">
+                <div *ngIf="currentValues.name.length === 0">{{text.fields[0]}} {{text.error}}</div>
+            </div>
             <!-- Email -->
-            <input type="email" id="defaultContactFormEmail" class="form-control mb-4" placeholder="E-mail">
+            <input type="email" name="{{text.fields[1]}}" id="defaultContactFormEmail" class="form-control mb-4" placeholder="{{text.fields[1]}}" [(ngModel)]="currentValues.email">
+            <div class="error" *ngIf="f.submitted">
+                <div *ngIf="currentValues.email.length === 0">{{text.fields[1]}} {{text.error}}</div>
+                <div *ngIf="!emailRegEx.test(currentValues.email)">{{text.emailError}} {{text.fields[1]}} {{text.error}}</div>
+            </div>
+            <!-- Phone -->
+            <input type="text" name="{{text.fields[2]}}" id="defaultContactFormEmail" class="form-control mb-4" placeholder="{{text.fields[2]}}" [(ngModel)]="currentValues.phone">
             <!-- Subject -->
-            <label>Subject</label>
-            <select class="browser-default custom-select mb-4">
-                <option value="" disabled>Choose option</option>
-                <option value="1" selected>Feedback</option>
-                <option value="2">Report a bug</option>
-                <option value="3">Feature request</option>
-                <option value="4">Feature request</option>
+            <label>{{text.fields[3]}}</label>
+            <select class="browser-default custom-select mb-4" name="{{text.fields[3]}}" [(ngModel)]="currentValues.reason">
+                <option value="" disabled>{{text.reasons[0]}}</option>
+                <option value="1">{{text.reasons[1]}}</option>
+                <option value="2">{{text.reasons[2]}}</option>
             </select>
             <!-- Message -->
             <div class="form-group">
-                <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3"
-                    placeholder="Message"></textarea>
-            </div>
-            <!-- Copy -->
-            <div class="row">
-                <div class="col-md-6 mx-auto d-flex justify-content-center">
-                    <mdb-checkbox [default]="true" class="mb-4">Send me a copy of this message</mdb-checkbox>
-                </div>
+                <textarea class="form-control rounded-0" name="{{text.fields[4]}}" id="exampleFormControlTextarea2" rows="3"
+                    placeholder="{{text.fields[4]}}" [(ngModel)]="currentValues.message"></textarea>
+                    <div class="error" *ngIf="f.submitted">
+                        <div *ngIf="currentValues.message.length === 0">{{text.fields[4]}} {{text.error}}</div>
+                    </div>
             </div>
             <!-- Send button -->
-            <button mdbBtn color="info" block="true" type="submit">Send</button>
+            <button mdbBtn color="info" block="true" type="submit">{{text.button}}</button>
         </form>
-        <!-- Default form contact -->
     </div>
 </div>

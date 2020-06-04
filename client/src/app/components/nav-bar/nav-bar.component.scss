@@ -45,23 +45,24 @@
   }
 
   .btn-outline-dark {
-    color: white;
-    font-size: x-large;
+    color: black;
+    display: table-cell;
+    font-size: medium;
+    vertical-align: middle;
   }
   
   .link{
-    padding-right: 20px;
-    padding-left: 20px;
-    margin-left: 10px;
-    margin-bottom: 40px;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-left: 5px;
     border: 0px;
     border-radius: 20px;
     transition: 1s;
   }
   
   #logo{
+    height: 60px;
     width: 150px; 
-    transform: translate(0%, -30%);
   }
   
   #contact-us:hover {

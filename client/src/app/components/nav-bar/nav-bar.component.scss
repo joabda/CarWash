@@ -44,11 +44,15 @@
     cursor: pointer;
   }
 
-  .btn-outline-dark {
+  .btn {
     color: black;
     display: table-cell;
     font-size: x-large;
     vertical-align: middle;
+  }
+
+  .btn:hover {
+    color: #01209b
   }
   
   .link{

@@ -116,3 +116,6 @@ package-lock.json
 
 # Code Coverage Folder
 coverage/
+
+# Personal scripts
+*.bat

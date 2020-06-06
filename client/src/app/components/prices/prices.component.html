@@ -1,0 +1,12 @@
+<div class="container">
+    <div id="images">
+        <ul>
+            <li *ngFor="let image of images; let i = index">
+                <a (click)="this.switchCar(i)">
+                    <img id="car-{{i}}" class="car-img" [src]="image.source" alt="{{image.description}}">
+                </a>
+            </li>
+        </ul>
+    </div>
+
+</div>

@@ -1,0 +1,23 @@
+
+.container {
+    text-align: center;
+}
+
+#images {
+    margin-left: auto;
+    margin-right: auto;
+    ul {
+        list-style: none;
+    }
+
+    .car-img {
+        float: left;
+        height: 100px;
+        margin-left: 20px;
+        width: 140px;
+    }
+
+    li:first-child {
+        margin-left: 0px;
+    }
+}

@@ -41,7 +41,9 @@ export class NavBarComponent implements OnInit {
       shareReplay()
     );
 
-  constructor(private breakpointObserver: BreakpointObserver, public dialog: MatDialog, private data: DataService) { }
+  constructor(private breakpointObserver: BreakpointObserver, public dialog: MatDialog, private data: DataService) {
+    
+  }
 
   ngOnInit() {
     this.breakpointObserver
@@ -49,7 +51,7 @@ export class NavBarComponent implements OnInit {
       .subscribe((size: BreakpointState) => {
         this.isBigScreen = size.matches;
       }
-      );
+    );
   }
 
   switchLanguage(): void {

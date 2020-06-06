@@ -47,11 +47,12 @@
   .btn-outline-dark {
     color: black;
     display: table-cell;
-    font-size: medium;
+    font-size: x-large;
     vertical-align: middle;
   }
   
   .link{
+    padding-top: 15px;
     padding-right: 10px;
     padding-left: 10px;
     margin-left: 5px;
@@ -64,12 +65,11 @@
     height: 60px;
     width: 150px; 
   }
-  
-  #contact-us:hover {
-    color: white;
-    background: black;
+
+  #toggle {
+    color: black;
   }
-  
-.mat-drawer-container{ 
-overflow: visible; 
-}  
+
+  .mat-drawer-container{ 
+    overflow: visible; 
+  }  

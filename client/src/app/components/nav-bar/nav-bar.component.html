@@ -4,28 +4,34 @@
         <mat-nav-list>
             <a mat-list-item *ngFor="let link of links" routerLink="{{link.href}}">{{link.name}}</a>
         </mat-nav-list>
+        
     </mat-sidenav>
 
     <mat-sidenav-content>
         <mat-toolbar id="bar" color="primary">
             <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
-                *ngIf="!isBigScreen">
+                *ngIf="!isBigScreen" id="toggle">
                 <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
             </button>
-            <a routerLink="">
+            <span class="fill-remaining-space"></span>
+            <nav class="nav nav-pills flex-column flex-sm-row" *ngIf="isBigScreen">
+                <li *ngFor="let link of links | slice:0:(links.length / 2)">
+                    <a type="button" class="btn-outline-dark link" routerLink="{{link.href}}">{{link.name}}</a>
+                </li>
+                <a routerLink="">
+                    <img src="../../../assets/img/logo.png" alt="Home Car Wash Logo" id="logo">
+                </a>
+                <li *ngFor="let link of links | slice:(links.length / 2)">
+                    <a type="button" class="btn-outline-dark link" routerLink="{{link.href}}">{{link.name}}</a>
+                </li>
+            </nav>
+            <a routerLink="" *ngIf="!isBigScreen">
                 <img src="../../../assets/img/logo.png" alt="Home Car Wash Logo" id="logo">
             </a>
             <span class="fill-remaining-space"></span>
-            <nav class="nav nav-pills flex-column flex-sm-row" *ngIf="isBigScreen">
-                <li *ngFor="let link of links">
-                    <a type="button" class="btn-outline-dark link" routerLink="{{link.href}}">{{link.name}}</a>
-                </li>
-                <li>
-                    <a (click)="this.switchLanguage()"> 
-                        <img id="lang-img" src="../../../assets/img/language/1.png" alt="Language"/>
-                    </a>
-                </li>
-            </nav>
+            <a (click)="this.switchLanguage()"> 
+                <img id="lang-img" src="../../../assets/img/language/1.png" alt="Language"/>
+            </a>
         </mat-toolbar>
         <ng-content></ng-content>
     </mat-sidenav-content>

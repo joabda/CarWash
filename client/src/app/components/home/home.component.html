@@ -16,9 +16,9 @@
         </div>
       </div>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-6" id="part2">
       <div class="view">
-        <img src="../../../assets/img/cars/intro.png"class="img-fluid"
+        <img src="../../../assets/img/cars/intro.png" class="img-fluid"
           alt="Car washed">
         <div class="mask flex-center hm-gradient">
         </div>
@@ -32,7 +32,9 @@
 <main id="next">
   <section id="reasons">
     <h2 class="h1 py-5 font-weight-bold text-center">{{text.contentQuestion}}</h2>
-    <p class="px-5 mb-5 pb-3 lead grey-text text-center">{{text.contentIntro}}</p>
+    <p class="px-5 mb-5 pb-3 lead grey-text text-center">
+      <span *ngFor="let point of text.contentIntro">{{point}} <br></span>
+    </p>
     <!--Grid row-->
     <div class="row">
       <!--Grid column-->
@@ -40,7 +42,7 @@
         <!--Grid row-->
         <div class="row mb-2" *ngFor="let element of text.column1">
           <div class="col-2">
-            <img [src]="element.iconSource" fas>
+            <img class="icon" [src]="element.iconSource" fas>
           </div>
           <div class="col-10 text-left">
             <h5 class="font-weight-bold">{{element.title}}</h5>
@@ -60,7 +62,7 @@
         <!--Grid row-->
         <div class="row mb-2" *ngFor="let element of text.column2; let i = index">
           <div class="col-2">
-            <img [src]="element.iconSource" fas>
+            <img class="icon" [src]="element.iconSource" fas>
           </div>
           <div class="col-10 text-left">
             <h5 class="font-weight-bold">{{element.title}}</h5>
@@ -73,4 +75,25 @@
     </div>
     <!--Grid row-->
   </section>
+
+  <h2 class="h1 py-5 font-weight-bold text-center">{{text.sameHome}}</h2>
+  <!--Grid row-->
+  <div class="flex-center" id="not-home">
+    <!--Grid column-->
+    <div class="col-md-4">
+      <!--Grid row-->
+      <div class="row mb-2" *ngFor="let element of text.home">
+        <div class="col-2">
+          <img class="icon" [src]="element.iconSource" fas>
+        </div>
+        <div class="col-10 text-left">
+          <h5 class="font-weight-bold">{{element.title}}</h5>
+          <p class="grey-text">{{element.details}}</p>
+        </div>
+      </div>
+      <!--Grid row-->
+    </div>
+    <!--Grid column-->
+    </div>
+
 </main>

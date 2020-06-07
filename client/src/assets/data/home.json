@@ -10,40 +10,64 @@
             "Be enviromental friendly"
         ],
         "contentQuestion": "Why US?",
-        "contentIntro": "Because we are",
+        "contentIntro": [
+            "We are proudly made in Quebec!", 
+            "We buy local.", 
+            "We support small businesses", 
+            "We employ people!"
+        ],
         "column1": [
             {
-                "title": "International",
-                "details": "text1",
-                "iconSource": "../../../assets/img/icons/"
+                "title": "Eco Friendly",
+                "details": "We use eco friendly product in all our washed, they are designed not to harm nature. We also use technologies that uses 45% less water than other companies and 80% less than you washing your car.",
+                "iconSource": "../../../assets/img/icons/eco.png"
             },
             {
                 "title": "Experimental",
-                "details": "text1",
+                "details": "As mentionned before we use the best technology in the industry straight from the USA our machinery and products are made to make your car look as new as it could be.",
                 "iconSource": "../../../assets/img/icons/experimental.png"
             },
             {
                 "title": "Relaxing",
-                "details": "text4",
-                "iconSource": "../../../assets/img/icons/"
+                "details": "The best part is you don't have to worry about anything at all! We come, we clean and we leave. You stay in the comfort of your own house.",
+                "iconSource": "../../../assets/img/icons/relax.png"
             }
         ],
         "column2": [
             {
                 "title": "Beloved",
-                "details": "text1",
+                "details": "Our customers are in love with our services, we give you the best of everything.",
                 "iconSource": "../../../assets/img/icons/heart.png"
             },
             {
                 "title": "Rapid",
-                "details": "text1",
+                "details": "Did you know our fastest wash is only 15 minutes? You can even enjoy our 2h full package while working, playing with your kids or practicing your hobby!",
                 "iconSource": "../../../assets/img/icons/fast.png"
             },
             {
                 "title": "Magical",
-                "details": "text4",
+                "details": "Do you remember that feeling when you first bought your car? That's what you're gonna get with us!",
                 "iconSource": "../../../assets/img/icons/magic.png"
             }
+        ],
+        "sameHome": "But... it is the same as washing at home",
+        "home": [
+            {
+                "title": "Water Consuming",
+                "details": "The average wash at home consumes 150L of water",
+                "iconSource": "../../../assets/img/icons/water.png"
+            },
+            {
+                "title": "Pollution",
+                "details": "The products used at home like soap pollute the environment",
+                "iconSource": "../../../assets/img/icons/pollution.png"
+            },
+            {
+                "title": "Scratches",
+                "details": "The paint of your car is 0.005 inch think, using non-professional tools may leave scratches.",
+                "iconSource": "../../../assets/img/icons/paint.png"
+            }
+
         ]
     },
     {

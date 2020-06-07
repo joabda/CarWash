@@ -3,6 +3,7 @@ import { Image } from 'src/app/interfaces/image';
 
 import * as _cars from 'src/assets/data/cars.json';
 import { CarType } from 'src/app/enums/cars';
+import { DataService } from 'src/app/services/data/data.service';
 
 @Component({
   selector: 'app-prices',
@@ -14,15 +15,14 @@ export class PricesComponent implements AfterViewInit{
   images: Image[] = (_cars as any).default as Image[];
   cars: HTMLImageElement[];
 
-  constructor() { 
-
-  }
+  constructor(private data: DataService) { }
 
   ngAfterViewInit(): void {
     this.cars= [];
     for(let i = 0; i < 4; ++i) {
       this.cars[i] = document.getElementById(`car-${i}`) as HTMLImageElement;
     }
+    this.switchCar(CarType.Sedan);
   }
 
   switchCar(type: CarType): void {

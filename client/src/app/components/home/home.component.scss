@@ -16,10 +16,25 @@
 }
 
 .carousel-text {
-    color: black;
     overflow: hidden;
     position: absolute;
+    text-align: center;
     transform: translate3d(-50%,-10%,0);
+}
+
+#blue {
+    color: #01209b;
+    left: 70%;
+    top: 20%; 
+}
+
+#white {
+    color: #ffffff;
+    left: 30%;
+    top: 65%; 
+    .header3 {
+        padding-top: 10px;;
+    }
 }
 
 .header2 {
@@ -32,4 +47,47 @@
 
 .header4 {
     font-size: 30px;
+}
+
+#content{
+    padding-left: 50px;
+    padding-right: 50px;
+    margin: auto;
+}
+
+#middle-image {
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+@media only screen and (max-width: 792px) {
+    #blue {
+        left: 50%;
+    }
+
+    #white {
+        left: 40%;
+    }
+
+    .header2 {
+        font-size: 40px;
+    }
+    
+    .header3 {
+        font-size: 30px;
+    }
+    
+    .header4 {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 792px) {
+    #home-image {
+        background-image: -webkit-linear-gradient(90deg, #01209b 50%, #ffffff 50%);
+    }
+
+    #white {
+        left: 50%;
+    }
 }

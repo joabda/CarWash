@@ -1,4 +1,6 @@
 import { Component, HostListener, AfterViewInit, OnDestroy } from '@angular/core';
+import { HomeJSON } from 'src/app/interfaces/json/home';
+import { DataService } from 'src/app/services/data/data.service';
 
 @Component({
   selector: 'app-home',
@@ -7,8 +9,12 @@ import { Component, HostListener, AfterViewInit, OnDestroy } from '@angular/core
 })
 export class HomeComponent implements AfterViewInit, OnDestroy{
 
+  text: HomeJSON;
   private mainNav;
-  constructor() { }
+
+  constructor(private data: DataService) { 
+    data.language.subscribe( () => this.text = data.getHome())
+  }
 
   ngAfterViewInit(): void {
     this.mainNav = document.getElementById('main-nav');
@@ -27,9 +33,7 @@ export class HomeComponent implements AfterViewInit, OnDestroy{
   scrollHandler(event: Event) {
     const missionSection = document.getElementById('next');
     if (missionSection !== null) {
-      const about = missionSection.getBoundingClientRect();
-      console.log(about.top)
-      if (about.top < 670) {
+      if (missionSection.getBoundingClientRect().top < 670) {
         this.mainNav.style.backgroundColor = '#FFFFFF';
       } else {
         this.mainNav.style.backgroundColor = 'transparent';

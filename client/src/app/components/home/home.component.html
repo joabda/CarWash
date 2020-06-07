@@ -1,82 +1,66 @@
 <div class="carousel">
     <div data-clip-mobile="center" data-clip-x="55%" data-clip-y="65%" id="home-image">
         <!-- (scroll)="scrollHandler($event)" -->
-        <div class="carousel-text" data-position-mobile="center" style="top:25%; left:50%;">
-            <h1 class="header3">Montreal</h1>
+        <div class="carousel-text" id="blue" data-position-mobile="center">
+            <h3 class="header3">{{text.you}}
+                <span class="material-icons">
+                    directions_car
+                </span>
+                {{text.question}}
+            </h3>
+            <h2 class="header2">{{text.answer}} </h2>
+            <h4 class="header4">{{text.caption}} </h4>
         </div>
-        <div class="carousel-text" data-position-mobile="center" style="top:65%; left:55%;">
-            <h3 class="header3">You need a wash?</h3>
-            <h2 class="header2">Call Car Wash</h2>
-            <h4 class="header4"> <span>You have the car</span> <span> we have the expertise</span></h4>
-            <span class="hero-btn-holder">
-                <a id="to-about-section" target="_blank" data-text="SCROLL" data-particle-direction="left"
-                    data-particle-color="#25a1db" href="#ut-to-first-section"
-                    class="hero-btn default    ut-btn-integrate ">
-                    <img src="../../../assets/img/icons/double-arrow.png">
-                </a>
-            </span>
+        <div class="carousel-text" id="white" data-position-mobile="center">
+            <h3 class="header3" *ngFor="let reason of text.reasons">{{reason}}</h3>
         </div>
     </div>
-    <ul class="CarouselNav" style="display: none;">
-        <li><button data-target="0" class="Current">01</button></li>
-        <li><button class="Next" data-target="NEXT"><span>&gt;</span></button></li>
-    </ul>
 </div>
 
-
-<div class="title" id="next">
-    <h1>Who are we?</h1>
-</div>
-<div id="container">
-    <div style="display: table-row;">
-        <div style="display: table-cell;">
-            <p class="mission-text">
-                We are a Montreal based firm trying to bring comfort to you.
-                Enjoy the best car wash techniques, while helping the planet.
-                You'll ask me how?
-                We used the most advanced car washing technologies made in Canada and the US, saving
-                up to 60% water than your regular wash.
-                All that without costing you more money and in the comfort of your own driveway.
-            </p>
-            <ul class="mission-text">
-                <li>
-                    <p>Save water
-                </li>
-                <li>
-                    <p>Save time
-                </li>
-                <li>
-                    <p>Stay in the comfort of your own home
-                </li>
-            </ul>
+<div id="content">
+    <!--Section: Features v.4-->
+    <section>
+        <h2 class="h1 py-5 font-weight-bold text-center">{{text.contentQuestion}}</h2>
+        <p class="px-5 mb-5 pb-3 lead grey-text text-center">{{text.contentIntro}}</p>
+        <!--Grid row-->
+        <div class="row">
+            <!--Grid column-->
+            <div class="col-md-4">
+                <!--Grid row-->
+                <div class="row mb-2" *ngFor="let element of text.column1">
+                    <div class="col-2">
+                        <img [src]="element.iconSource" fas>
+                    </div>
+                    <div class="col-10 text-left">
+                        <h5 class="font-weight-bold">{{element.title}}</h5>
+                        <p class="grey-text">{{element.details}}</p>
+                    </div>
+                </div>
+                <!--Grid row-->
+            </div>
+            <!--Grid column-->
+            <!--Grid column-->
+            <div class="col-md-4 mb-2 center-on-small-only flex-center">
+                <img src="../../../assets/img/cars/wash.jpg" alt="Car Washing"
+                    class="z-depth-0 img-fluid">
+            </div>
+            <!--Grid column-->
+            <!--Grid column-->
+            <div class="col-md-4">
+                <!--Grid row-->
+                <div class="row mb-2" *ngFor="let element of text.column2; let i = index">
+                    <div class="col-2">
+                        <img [src]="element.iconSource" fas>
+                    </div>
+                    <div class="col-10 text-left">
+                        <h5 class="font-weight-bold">{{element.title}}</h5>
+                        <p class="grey-text">{{element.details}}</p>
+                    </div>
+                </div>
+                <!--Grid row-->
+            </div>
+            <!--Grid column-->
         </div>
-        <div style="display: table-cell;">
-            <img src="">
-        </div>
-
-    </div>
-    <div style="display: table-row;">
-        <div style="display: table-cell;">
-            <img src="../../../assets/img/canada-let-pin.png" alt="Libano-Canadian Flag">
-        </div>
-        <div style="display: table-cell; padding:0">
-            <p class="mission-text">
-                Pour ce qui est de la relation avec les membres, la Fédération fournit des services matériels,<br />
-                intellectuels, culturels, moraux et professionnels en vue du bien-être individuel <br />
-                et collectif des membres tout en favorisant chez eux le sens de la responsabilité <br />
-                et de la collaboration.
-                <br />
-                <br />
-                Concernant la relation avec les associations membres, la Fédération facilite <br />
-                la création des associations dans les universités, et coordonne leurs efforts<br />
-                dans des projets conjoints sans, pour autant, intervenir dans la régie interne<br />
-                de ces associations.
-                <br />
-                <br />
-                Enfin, Tollab collabore avec des organismes étudiants, humanitaires et sociaux,<br />
-                ainsi qu’avec d’autres corps publics ou privés afin d’organiser des projets<br />
-                facilitant l’intégration des membres dans le milieuuniversitaire et sur le marché du travail.
-            </p>
-        </div>
-    </div>
+        <!--Grid row-->
+    </section>
 </div>

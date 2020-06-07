@@ -1,0 +1,60 @@
+[
+    {
+        "you": "Your ",
+        "question": " needs a wash?",
+        "answer": "Call Car Wash",
+        "caption": "You have the car we have the expertise",
+        "reasons": [
+            "Support small businesses",
+            "Buy local", 
+            "Be enviromental friendly"
+        ],
+        "contentQuestion": "Why US?",
+        "contentIntro": "Because we are",
+        "column1": [
+            {
+                "title": "International",
+                "details": "text1",
+                "iconSource": "../../../assets/img/icons/"
+            },
+            {
+                "title": "Experimental",
+                "details": "text1",
+                "iconSource": "../../../assets/img/icons/experimental.png"
+            },
+            {
+                "title": "Relaxing",
+                "details": "text4",
+                "iconSource": "../../../assets/img/icons/"
+            }
+        ],
+        "column2": [
+            {
+                "title": "Beloved",
+                "details": "text1",
+                "iconSource": "../../../assets/img/icons/heart.png"
+            },
+            {
+                "title": "Rapid",
+                "details": "text1",
+                "iconSource": "../../../assets/img/icons/fast.png"
+            },
+            {
+                "title": "Magical",
+                "details": "text4",
+                "iconSource": "../../../assets/img/icons/magic.png"
+            }
+        ]
+    },
+    {
+        "you": "Votre ",
+        "question": " a besoin d'un lavage?",
+        "answer": "Appelez Car Wash",
+        "caption": "Vous avez l'auto, nous avons l'expertise",
+        "reasons": [
+            "Soutenir les petites entreprises",
+            "Acheter local", 
+            "Soyez respectueux de l'environnement"
+        ]
+    }
+]

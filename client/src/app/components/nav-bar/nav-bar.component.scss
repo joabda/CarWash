@@ -20,6 +20,10 @@
     background: inherit;
   }
   
+  #bar {
+    margin-left: 50px;
+  }
+
   .mat-toolbar.mat-primary {
     background: transparent;
     position: sticky;
@@ -73,3 +77,9 @@
   .mat-drawer-container{ 
     overflow: visible; 
   }  
+
+@media only screen and (max-width: 935px) {
+  #bar {
+    margin-left: 15px;
+  }
+}

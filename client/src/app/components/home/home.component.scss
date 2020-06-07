@@ -1,54 +1,45 @@
-#home-image {
-    background-image: -webkit-linear-gradient(63.25deg, #01209b 50%, #ffffff 50%);
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
-}
 
-.carousel {
+.hm-gradient {
+    background: linear-gradient(40deg, rgba(0,51,199,.3), rgba(209,149,249,.3));
+  }
+  .heading {
+    margin: 0 6rem;
+    font-weight: 700;
+    color: #5d4267;
+  }
+  .subheading {
+    margin: 2.5rem 6rem;
+    color: #bcb2c0;
+  }
+  .title {
+    margin-top: 6rem;
+    margin-bottom: 2rem;
+    color: #5d4267;
+  }
+  .subtitle {
+    color: #bcb2c0;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 6rem;
+  }
+  
+  .view {
     height: 100vh;
-    min-height: 50vw;
-    padding-bottom: 0;
-    background: #040406;
-    position: relative;
-}
-
-.carousel-text {
-    overflow: hidden;
-    position: absolute;
-    text-align: center;
-    transform: translate3d(-50%,-10%,0);
-}
-
-#blue {
-    color: #01209b;
-    left: 70%;
-    top: 20%; 
-}
-
-#white {
-    color: #ffffff;
-    left: 30%;
-    top: 65%; 
-    .header3 {
-        padding-top: 10px;;
+    img {
+      margin-top: 35vh;
     }
-}
+    .btn-margin {
+      margin-left: 20vw;
+      margin-top: 3rem;
+    }
+    .btn-lily {
+      background: linear-gradient(40deg, rgba(0,51,199,.7), rgba(209,149,249,.7));
+    }
+  }
 
-.header2 {
-    font-size: 50px;
-}
-
-.header3 {
-    font-size: 40px;
-}
-
-.header4 {
-    font-size: 30px;
-}
-
+  .view {
+    height:100vh
+  }
 #next{
     padding-left: 50px;
     padding-right: 50px;
@@ -58,36 +49,4 @@
 #middle-image {
     padding-left: 50px;
     padding-right: 50px;
-}
-
-@media only screen and (max-width: 792px) {
-    #blue {
-        left: 50%;
-    }
-
-    #white {
-        left: 40%;
-    }
-
-    .header2 {
-        font-size: 40px;
-    }
-    
-    .header3 {
-        font-size: 30px;
-    }
-    
-    .header4 {
-        font-size: 20px;
-    }
-}
-
-@media only screen and (max-width: 792px) {
-    #home-image {
-        background-image: -webkit-linear-gradient(90deg, #01209b 50%, #ffffff 50%);
-    }
-
-    #white {
-        left: 50%;
-    }
 }

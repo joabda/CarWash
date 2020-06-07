@@ -81,6 +81,10 @@
     overflow: visible; 
   }  
 
+  #lang {
+    transform: translate(-100%, 0);
+  }
+
 @media only screen and (max-width: 935px) {
   #bar {
     margin-left: 15px;

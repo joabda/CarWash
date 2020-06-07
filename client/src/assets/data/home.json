@@ -50,7 +50,8 @@
                 "iconSource": "../../../assets/img/icons/magic.png"
             }
         ],
-        "sameHome": "But... it is the same as washing at home",
+        "sameHome": "But... It's the same as washing it myself",
+        "sameHomeCaption": "Washing it yourself at phone has some disavantages as",
         "home": [
             {
                 "title": "Water Consuming",

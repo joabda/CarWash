@@ -44,14 +44,17 @@
     cursor: pointer;
   }
 
-  .btn {
+  .nav-but{
     color: black;
     display: table-cell;
-    font-size: x-large;
+    font-size: medium;
+    padding-top: 10px;
+    padding-left: 10px;
+    text-decoration: none;
     vertical-align: middle;
   }
 
-  .btn:hover {
+  .nav-but:hover {
     color: #01209b
   }
   

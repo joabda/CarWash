@@ -6,8 +6,9 @@ export interface HomeJSON {
     reasons: string[],
     contentQuestion: string,
     contentIntro: string[],
-    column1: {title: string, details: string, iconSource: string}[];
-    column2: {title: string, details: string, iconSource: string}[];
-    sameHome: string;
-    home: {title: string, details: string, iconSource: string}[];
+    column1: {title: string, details: string, iconSource: string}[],
+    column2: {title: string, details: string, iconSource: string}[],
+    sameHome: string,
+    sameHomeCaption: string
+    home: {title: string, details: string, iconSource: string}[]
 }

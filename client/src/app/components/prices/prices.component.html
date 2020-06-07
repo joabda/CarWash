@@ -1,13 +1,111 @@
 <div class="container">
-    <div id="images">
-        <h2>Select your car type in order to get the most acurate price.</h2>
-        <ul>
-            <li *ngFor="let image of images; let i = index">
-                <a (click)="this.switchCar(i)">
-                    <img id="car-{{i}}" class="car-img" [src]="image.source" alt="{{image.description}}">
-                </a>
-            </li>
-        </ul>
-    </div>
+  <div id="images">
+    <h2>Select your car type in order to get the most acurate price.</h2>
+    <ul>
+      <li *ngFor="let image of images; let i = index">
+        <a (click)="this.switchCar(i)">
+          <img id="car-{{i}}" class="car-img" [src]="image.source" alt="{{image.description}}">
+        </a>
+      </li>
+    </ul>
+  </div>
 
+  <!--Section: Pricing v.6-->
+  <section class="text-center pb-3 my-5">
+    <!--Grid row-->
+    <div class="row">
+
+      <!--Grid column-->
+      <div class="col-lg-4 col-md-12 mb-4">
+        <!--Pricing card-->
+        <mdb-card class="pricing-card white-text dark">
+          <!--Price-->
+          <div class="header aqua-gradient">
+            <h4 class="option">{{text.packages[0].title}}</h4>
+          </div>
+          <!--Price-->
+
+          <!--Features-->
+          <mdb-card-body class="striped green-striped card-background heading px-5">
+            <h2 class="my-4 h1">{{text.packages[0].price * FACTORS[currentCar]}}$</h2>
+            <ul>
+              <li *ngFor="let feature of text.packages[0].features">
+                <p class="mt-1">
+                  <strong>{{feature}}</strong></p>
+              </li>
+            </ul>
+            <button mdbBtn gradient="aqua" rounded="true" class="mb-3 mt-3 waves-light" mdbWavesEffect>Buy now
+            </button>
+          </mdb-card-body>
+          <!--Features-->
+
+        </mdb-card>
+        <!--Pricing card-->
+      </div>
+      <!--Grid column-->
+
+      <!--Grid column-->
+      <div class="col-lg-4 col-md-12 mb-4">
+        <!--Pricing card-->
+        <mdb-card class="pricing-card white-text dark">
+          <!--Price-->
+          <div class="header peach-gradient">
+            <h4 class="option">{{text.packages[1].title}}</h4>
+          </div>
+          <!--Price-->
+
+          <!--Features-->
+          <mdb-card-body class="striped orange-striped card-background heading px-5">
+            <h2 class="my-4 h1">{{text.packages[1].price * FACTORS[currentCar]}}$</h2>
+            <ul>
+              <li *ngFor="let feature of text.packages[1].features">
+                <p class="mt-1">
+                  <strong>{{feature}}</strong></p>
+              </li>
+            </ul>
+
+            <button mdbBtn gradient="peach" rounded="true" class="mb-3 mt-3 waves-light" mdbWavesEffect>Buy now
+            </button>
+          </mdb-card-body>
+          <!--Features-->
+
+        </mdb-card>
+        <!--Pricing card-->
+      </div>
+      <!--Grid column-->
+
+      <!--Grid column-->
+      <div class="col-lg-4 col-md-12 mb-4">
+        <!--Pricing card-->
+        <mdb-card class="pricing-card white-text dark">
+          <!--Price-->
+          <div class="header purple-gradient">
+            <h4 class="option">{{text.packages[2].title}}</h4>
+          </div>
+          <!--Price-->
+
+          <!--Features-->
+          <mdb-card-body class="striped purple-striped card-background heading px-5">
+            <h2 class="my-4 h1">{{text.packages[2].price * FACTORS[currentCar]}}$</h2>
+            <ul>
+              <li *ngFor="let feature of text.packages[2].features">
+                <p class="mt-1">
+                  <strong>{{feature}}</strong></p>
+              </li>
+            </ul>
+            <button mdbBtn gradient="purple" rounded="true" class="mb-3 mt-3 waves-light" mdbWavesEffect>Buy now
+            </button>
+          </mdb-card-body>
+          <!--Features-->
+
+        </mdb-card>
+        <!--Pricing card-->
+      </div>
+      <!--Grid column-->
+
+    </div>
+    <!--Grid row-->
+
+  </section>
+  <!--Section: Pricing v.6-->
 </div>

@@ -16,13 +16,13 @@
             <span class="fill-remaining-space"></span>
             <nav class="nav nav-pills flex-column flex-sm-row" *ngIf="isBigScreen">
                 <li *ngFor="let link of links | slice:0:(links.length / 2)">
-                    <a type="button" class="btn link" routerLink="{{link.href}}">{{link.name}}</a>
+                    <a type="button" class="nav-but" routerLink="{{link.href}}">{{link.name}}</a>
                 </li>
                 <a routerLink="">
                     <img src="../../../assets/img/logo.png" alt="Home Car Wash Logo" id="logo">
                 </a>
                 <li *ngFor="let link of links | slice:(links.length / 2)">
-                    <a type="button" class="btn link" routerLink="{{link.href}}">{{link.name}}</a>
+                    <a type="button" class="nav-but" routerLink="{{link.href}}">{{link.name}}</a>
                 </li>
             </nav>
             <a routerLink="" *ngIf="!isBigScreen">

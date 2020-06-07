@@ -7,8 +7,10 @@ import { Title } from 'src/app/interfaces/title';
 import * as _titles from 'src/assets/data/titles.json'
 import * as _contactUs from 'src/assets/data/contact-us.json'
 import * as _home from 'src/assets/data/home.json'
+import * as _prices from 'src/assets/data/prices.json';
 import { ContactUsJSON } from 'src/app/interfaces/json/contact-us';
 import { HomeJSON } from 'src/app/interfaces/json/home';
+import { PricesJSON } from 'src/app/interfaces/json/prices';
 
 @Injectable({
   providedIn: 'root'
@@ -20,6 +22,7 @@ export class DataService {
   private titles_ = (_titles as any).default as Title[];
   private contactUs_ = (_contactUs as any).default as ContactUsJSON[];
   private home_ = (_home as any).default as HomeJSON[];
+  private prices_ = (_prices as any).default as PricesJSON[];
 
   constructor() { }
 
@@ -42,5 +45,9 @@ export class DataService {
 
   getHome(): HomeJSON {
     return this.home_[this.language.value];
+  }
+
+  getPrices(): PricesJSON {
+    return this.prices_[this.language.value];
   }
 }

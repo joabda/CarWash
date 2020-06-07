@@ -8,7 +8,6 @@
     width: 100%;
     ul {
         list-style: none;
-        margin: auto;
         overflow: auto;
     }
 
@@ -30,5 +29,18 @@
     ul {
         list-style: none;
         padding-left: 0;
+    }
+}
+
+#ul-wrap {
+    display: flex;
+    justify-content: center;
+
+    ul {
+        margin-left: auto;
+        margin-right: auto;
+        li {
+            display: inline;
+        }
     }
 }

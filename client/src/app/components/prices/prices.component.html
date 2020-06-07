@@ -1,6 +1,7 @@
 <div class="container">
   <div id="images">
     <h2>Select your car type in order to get the most acurate price.</h2>
+    <div id="ul-wrap">
     <ul>
       <li *ngFor="let image of images; let i = index">
         <a (click)="this.switchCar(i)">
@@ -8,6 +9,7 @@
         </a>
       </li>
     </ul>
+    </div>
   </div>
 
   <!--Section: Pricing v.6-->

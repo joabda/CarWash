@@ -3,10 +3,8 @@ import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/l
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { MatDialog } from '@angular/material/dialog';
-import { DataService } from 'src/app/services/data/data.service';
-import { Language } from 'src/app/enums/language';
-
-
+import { TranslateService } from '@ngx-translate/core';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-nav-bar',
@@ -15,21 +13,22 @@ import { Language } from 'src/app/enums/language';
 })
 export class NavBarComponent implements OnInit {
 
+  server = environment.server
   links = [
     {
-      name: 'Home',
+      name: 'TITLE.home',
       href: '/'
     },
     {
-      name: 'Services',
+      name: 'TITLE.services',
       href: '/services'
     },
     {
-      name: 'Prices',
+      name: 'TITLE.prices',
       href: '/prices'
     },
     {
-      name: 'Contact Us',
+      name: 'TITLE.contact',
       href: '/contact-us'
     }
   ];
@@ -41,7 +40,8 @@ export class NavBarComponent implements OnInit {
       shareReplay()
     );
 
-  constructor(private breakpointObserver: BreakpointObserver, public dialog: MatDialog, private data: DataService) {
+  constructor(private breakpointObserver: BreakpointObserver, public dialog: MatDialog,
+    private translate: TranslateService) {
     
   }
 
@@ -55,15 +55,8 @@ export class NavBarComponent implements OnInit {
   }
 
   switchLanguage(): void {
-    (document.getElementById("lang-img") as HTMLImageElement).src = `../../../assets/img/language/${this.data.language.value}.png`;
-    this.data.language.next((this.data.language.value === Language.FR) ? Language.EN : Language.FR);
-    this.updateText();
-  }
-
-  private updateText(): void {
-    const titles = this.data.getTitles();
-    for(let i = 0; i < this.links.length; ++i) {
-      this.links[i].name = titles[i];
-    }
+    console.log("Lang:", this.translate.currentLang);
+    (document.getElementById("lang-img") as HTMLImageElement).src = `${environment.server}/img/language/${this.translate.currentLang}.png`;
+    this.translate.use(this.translate.currentLang === "fr" ? "en" : "fr");
   }
 }

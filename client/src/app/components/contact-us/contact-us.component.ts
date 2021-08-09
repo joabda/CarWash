@@ -1,12 +1,11 @@
 import { Component, ViewChild } from '@angular/core';
 import { ContactInfo } from 'src/app/interfaces/contact-infos';
-import { DataService } from 'src/app/services/data/data.service';
 import { NgForm } from '@angular/forms';
 import { ContactUsForm } from 'src/app/interfaces/form';
 import { ContactUsJSON } from 'src/app/interfaces/json/contact-us';
-import * as _info from '../../../assets/data/contact-info.json'
 import { HttpClient } from '@angular/common/http';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-contact-us',
@@ -16,7 +15,10 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class ContactUsComponent {
 
   emailRegEx: RegExp = new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
-  info = (_info as any).default[0] as ContactInfo;
+  info: ContactInfo = {
+    email: "joe-abdo3@hotmail.com",
+    phoneNumber: "4185594526"
+  }
   text: ContactUsJSON;
   currentValues: ContactUsForm = {
     name: "",
@@ -25,11 +27,32 @@ export class ContactUsComponent {
     phone: "",
     reason: ""
   };
+  
+  server = environment.server
 
   @ViewChild(NgForm, { static: true }) public form: NgForm;
 
-  constructor(private snacks: MatSnackBar, private data: DataService, private http: HttpClient) {
-    this.text = data.getContactUs();
+  constructor(private snacks: MatSnackBar, private http: HttpClient) {
+    this.text = {
+      title: 'TITLE.contact',
+      button: 'CONTACT.button',
+      caption: 'CONTACT.caption',
+      emailError: 'CONTACT.emailError',
+      error: 'CONTACT.error',
+      errorSending: 'CONTACT.errorSending',
+      fields: {
+        email: 'CONTACT.Fields.email',
+        message: 'CONTACT.Fields.message',
+        name: 'CONTACT.Fields.name',
+        phone: 'CONTACT.Fields.phone',
+        subject: 'CONTACT.Fields.subject'
+      },
+      reasons: {
+        choose: 'CONTACT.Reasons.choose',
+        feedback: 'CONTACT.Reasons.feedback'
+      },
+      thanks: 'CONTACT.thanks'
+    }
   }
 
   send(): void {

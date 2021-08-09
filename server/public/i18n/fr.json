@@ -1,0 +1,53 @@
+{
+    "TITLE": {
+        "home": "Acceuil",
+        "services": "Services",
+        "prices": "Prix",
+        "contact": "Contactez Nous"
+    },
+    "CONTACT": {
+        "Fields": {
+            "name": "Nom",
+            "email": "E-mail",
+            "phone": "Numéro de téléphone",
+            "subject": "Sujet",
+            "message": "Message"
+        },
+        "Reasons": {
+            "choose": "Choisir une option",
+            "feedback": "Feedback"
+        },
+        "button": "Envoyer",
+        "caption": "Que peut-on faire pour vous aider aujourd'hui?",
+        "error": "est requis",
+        "emailError": "Valide",
+        "thanks": "Nous vous répondrons dans les plus brefs délais!",
+        "errorSending": "Oups, quelque chose s'est produit, veuillez réessayer plus tard."
+    },
+    "SERVICES": {
+        "exterior": {
+            "title": "Lavage Extérieur",
+            "desc": ""
+        },
+        "interior": {
+            "title": "Lavage Intérieur",
+            "desc": ""
+        },
+        "vacuum": {
+            "title": "Aspirateur",
+            "desc": ""
+        },
+        "seats": {
+            "title": "Lavage de Sièges",
+            "desc": ""
+        },
+        "window": {
+            "title": "Window Wipping",
+            "desc": ""
+        },
+        "oil": {
+            "title": "Changement d'huile",
+            "desc": ""
+        }
+    }
+}

@@ -2,51 +2,51 @@
     <div class="banner">
         <section class="contact-infos">
             <figure>
-                <a href="tel:{{info.phoneNumber}}"><img src="../../../assets/img/icons/phone.png" alt="phone icon"></a>
+                <a href="tel:{{info.phoneNumber}}"><img src="{{server}}/img/icons/phone.png" alt="phone icon"></a>
                 <figcaption><a href="tel:{{info.phoneNumber}}">{{info.phoneNumber}}<br><br></a></figcaption>
             </figure>
             <figure>
-                <a href="mailto:{{info.email}}"><img src="../../../assets/img/icons/email.png" alt="email icon"></a>
+                <a href="mailto:{{info.email}}"><img src="{{server}}/img/icons/email.png" alt="email icon"></a>
                 <figcaption><a href="mailto:{{info.email}}">{{info.email}}<br><br></a></figcaption>
             </figure>
         </section>
     </div>
     <div id="content">
         <div style="float: left; max-width: 20vw;" id="onediv">
-            <h1 style="color: #33b5e5;" id="caption">{{text.caption}}</h1>
-            <img id="form-img" src="../../../assets/img/letter.svg" alt="Letter Image">
+            <h1 style="color: #33b5e5;" id="caption">{{text.caption | translate}}</h1>
+            <img id="form-img" src="{{server}}/img/letter.svg" alt="Letter Image">
         </div>
         <form id="form" class="text-center border border-light p-5"  (ngSubmit)="f.form.valid && send()" #f="ngForm" novalidate>
             <!-- Name -->
-            <input type="text" name="{{text.fields[0]}}" id="defaultContactFormName" class="form-control mb-4" placeholder="{{text.fields[0]}}" [(ngModel)]="currentValues.name">
+            <input type="text" name="{{text.fields.name | translate}}" id="defaultContactFormName" class="form-control mb-4" placeholder="{{text.fields.name | translate}}" [(ngModel)]="currentValues.name">
             <div class="error" *ngIf="f.submitted">
-                <div *ngIf="currentValues.name.length === 0">{{text.fields[0]}} {{text.error}}</div>
+                <div *ngIf="currentValues.name.length === 0">{{text.fields.name | translate}} {{text.error}}</div>
             </div>
             <!-- Email -->
-            <input type="email" name="{{text.fields[1]}}" id="defaultContactFormEmail" class="form-control mb-4" placeholder="{{text.fields[1]}}" [(ngModel)]="currentValues.email">
+            <input type="email" name="{{text.fields.email | translate}}" id="defaultContactFormEmail" class="form-control mb-4" placeholder="{{text.fields.email | translate}}" [(ngModel)]="currentValues.email">
             <div class="error" *ngIf="f.submitted">
-                <div *ngIf="currentValues.email.length === 0">{{text.fields[1]}} {{text.error}}</div>
-                <div *ngIf="!emailRegEx.test(currentValues.email)">{{text.emailError}} {{text.fields[1]}} {{text.error}}</div>
+                <div *ngIf="currentValues.email.length === 0">{{text.fields.email | translate}} {{text.error}}</div>
+                <div *ngIf="!emailRegEx.test(currentValues.email)">{{text.emailError}} {{text.fields.email | translate}} {{text.error}}</div>
             </div>
             <!-- Phone -->
-            <input type="text" name="{{text.fields[2]}}" id="defaultContactFormEmail" class="form-control mb-4" placeholder="{{text.fields[2]}}" [(ngModel)]="currentValues.phone">
+            <input type="text" name="{{text.fields.phone | translate}}" id="defaultContactFormEmail" class="form-control mb-4" placeholder="{{text.fields.phone | translate}}" [(ngModel)]="currentValues.phone">
             <!-- Subject -->
-            <label>{{text.fields[3]}}</label>
-            <select class="browser-default custom-select mb-4" name="{{text.fields[3]}}" [(ngModel)]="currentValues.reason">
-                <option value="" disabled>{{text.reasons[0]}}</option>
-                <option value="1">{{text.reasons[1]}}</option>
-                <option value="2">{{text.reasons[2]}}</option>
+            <label>{{text.fields.phone | translate}}</label>
+            <select class="browser-default custom-select mb-4" name="{{text.fields.phone | translate}}" [(ngModel)]="currentValues.reason">
+                <option value="" disabled>{{text.reasons.choose | translate}}</option>
+                <option value="1">{{text.reasons.choose | translate}}</option>
+                <option value="2">{{text.reasons.feedback | translate}}</option>
             </select>
             <!-- Message -->
             <div class="form-group">
-                <textarea class="form-control rounded-0" name="{{text.fields[4]}}" id="exampleFormControlTextarea2" rows="3"
-                    placeholder="{{text.fields[4]}}" [(ngModel)]="currentValues.message"></textarea>
+                <textarea class="form-control rounded-0" name="{{text.fields.message | translate}}" id="exampleFormControlTextarea2" rows="3"
+                    placeholder="{{text.fields.message | translate}}" [(ngModel)]="currentValues.message"></textarea>
                     <div class="error" *ngIf="f.submitted">
-                        <div *ngIf="currentValues.message.length === 0">{{text.fields[4]}} {{text.error}}</div>
+                        <div *ngIf="currentValues.message.length === 0">{{text.fields.message | translate}} {{text.error | translate}}</div>
                     </div>
             </div>
             <!-- Send button -->
-            <button mat-button color="info" block="true" type="submit" style="border: 1px solid black;">{{text.button}}</button>
+            <button mat-button color="info" block="true" type="submit" style="border: 1px solid black;">{{text.button | translate}}</button>
         </form>
     </div>
 </div>

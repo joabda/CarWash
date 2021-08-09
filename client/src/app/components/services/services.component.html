@@ -1,47 +1,15 @@
-<div class="team-container" #test>
-    <!-- <div id="filter">
-        <div id="assos">
-            <button mat-raised-button color="primary" (click)="filterByAssociation('NONE')"> Show all</button>
-            <button mat-raised-button color="primary" *ngFor="let asso of associations"
-                (click)="filterByAssociation(asso)">{{asso}}</button>
-        </div>
-
-        <div id="roles">
-            <button mat-raised-button color="primary" (click)="filterByRole('NONE')"> Show all roles</button>
-            <button mat-raised-button color="primary" *ngFor="let role of roles"
-                (click)="filterByRole(role)">{{role}}</button>
-        </div>
-    </div> -->
-
-    <!-- <ul>
-        <li class="service" *ngFor="let member of members">
-            <div *ngIf="!member.hidden">
-                <mat-card>
-                    <mat-card-header>
-                        <mat-card-title>{{member.fullName}}</mat-card-title>
-                        <mat-card-subtitle>{{member.role}} @ {{member.association}}</mat-card-subtitle>
-                    </mat-card-header>
-                    <img class="service-image" mat-card-image src="{{member.pictureURL}}"
-                        alt="{{member.fullName}} profile picture">
-                    <mat-card-content>
-                        <p> {{member.description}} </p>
-                    </mat-card-content>
-                    <mat-card-actions>
-                    <button mat-button>LIKE</button>
-                    <button mat-button>SHARE</button>
-                </mat-card-actions>
-                </mat-card>
+<div class="container">
+    <div class="service">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6" *ngFor="let service of services">
+                    <div class="service-item">
+                        <i class="{{service.icon}}"></i>
+                        <h3>{{service.title | translate}}</h3>
+                        <p>{{service.description | translate}}</p>
+                    </div>
+                </div>
             </div>
-        </li>
-    </ul> -->
-
-
-
-
-
-
-
-
-
-
+        </div>
+    </div>
 </div>

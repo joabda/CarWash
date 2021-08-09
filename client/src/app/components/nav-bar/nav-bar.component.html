@@ -2,7 +2,7 @@
     <mat-sidenav #drawer class="sidenav" (focusout)="drawer.close()"
         [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" mode="over" [fixedInViewport]="true" fullscreen>
         <mat-nav-list>
-            <a mat-list-item *ngFor="let link of links" routerLink="{{link.href}}">{{link.name}}</a>
+            <a mat-list-item *ngFor="let link of links" routerLink="{{link.href}}">{{link.name | translate}}</a>
         </mat-nav-list>
         
     </mat-sidenav>
@@ -16,21 +16,21 @@
             <span class="fill-remaining-space"></span>
             <nav class="nav nav-pills flex-column flex-sm-row" *ngIf="isBigScreen">
                 <li *ngFor="let link of links | slice:0:(links.length / 2)">
-                    <a type="button" class="nav-but" routerLink="{{link.href}}">{{link.name}}</a>
+                    <a type="button" class="nav-but" routerLink="{{link.href}}">{{link.name  | translate}}</a>
                 </li>
                 <a routerLink="">
-                    <img src="../../../assets/img/logo.png" alt="Home Car Wash Logo" id="logo">
+                    <img src="{{server}}/img/logo.png" alt="Home Car Wash Logo" id="logo">
                 </a>
                 <li *ngFor="let link of links | slice:(links.length / 2)">
-                    <a type="button" class="nav-but" routerLink="{{link.href}}">{{link.name}}</a>
+                    <a type="button" class="nav-but" routerLink="{{link.href}}">{{link.name  | translate}}</a>
                 </li>
             </nav>
             <a routerLink="" *ngIf="!isBigScreen">
-                <img src="../../../assets/img/logo.png" alt="Home Car Wash Logo" id="logo">
+                <img src="{{server}}/img/logo.png" alt="Home Car Wash Logo" id="logo">
             </a>
             <span class="fill-remaining-space"></span>
             <a (click)="this.switchLanguage()" id="lang"> 
-                <img id="lang-img" src="../../../assets/img/language/1.png" alt="Language"/>
+                <img id="lang-img" src="{{server}}/img/language/en.png" alt="Language"/>
             </a>
         </mat-toolbar>
         <ng-content></ng-content>

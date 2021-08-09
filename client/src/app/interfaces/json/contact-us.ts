@@ -4,8 +4,17 @@ export interface ContactUsJSON {
     emailError: string,
     error: string,
     errorSending: string
-    fields: string[],
-    reasons: string[],
+    fields: {
+        name: string,
+        email: string,
+        phone: string,
+        subject: string,
+        message: string
+    },
+    reasons: {
+        choose: string,
+        feedback: string
+    },
     thanks: string,
     title: string
 }
